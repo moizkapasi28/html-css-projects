@@ -1,93 +1,80 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  /* Targets every single element on the page */
+  margin: 0; /* Removes the default outer spacing browsers add around elements */
+  padding: 0; /* Removes the default inner spacing browsers add inside elements */
+  box-sizing: border-box; /* Makes width/height include padding & border — so a 200px box stays 200px even with padding */
 }
-
 .container {
-  background-color: #e5e5fd;
-  min-height: 100vh;
-  border: 10px solid #1d1e4c;
+  background-color: #e5e5fd; /* Sets the background color using a hex code — this is a light lavender */
+  min-height: 100vh; /* Makes the container at least 100% of the viewport (screen) height — vh = viewport height */
+  border: 10px solid #1d1e4c; /* Adds a border: thickness=10px, style=solid line, color=dark navy. Shorthand for border-width, border-style, border-color */
 }
-
 .content {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 900px; /* Prevents the content from stretching wider than 900px on large screens */
+  margin: 0 auto; /* Top/bottom margin = 0. Left/right = auto, which centers the element horizontally */
 }
-
 .image-container {
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; /* Rounds all four corners. 50% on a square element makes it a perfect circle */
+  overflow: hidden; /* Hides any content that spills outside the element's box — needed so the image respects the circular border-radius */
 }
-
 .image-container,
 img {
-  height: 320px;
-  width: 320px;
+  /* Comma-separated selectors — applies the same rules to both .image-container AND img elements */
+  height: 320px; /* Sets a fixed height of 320 pixels */
+  width: 320px; /* Sets a fixed width of 320 pixels — same as height makes it a perfect square (then circle with border-radius) */
 }
-
 .top_section h1 {
-  font-size: 50px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #1d1e4c;
+  /* Descendant selector — only targets h1 elements that are INSIDE .top_section */
+  font-size: 50px; /* Sets the text size to 50 pixels */
+  text-transform: uppercase; /* Converts all text to UPPERCASE letters without changing the HTML — other values: lowercase, capitalize */
+  font-weight: bold; /* Makes the text bold — equivalent to font-weight: 700. Options: normal (400), bold (700), or numbers like 300, 500, 900 */
+  color: #1d1e4c; /* Sets the text color to dark navy using a hex code */
 }
-
 .top_section h4 {
-  text-align: end;
-  font-size: 30px;
-  color: #1d1e4c;
+  text-align: end; /* Aligns text to the right side of its container — 'end' is modern; 'right' also works */
+  font-size: 30px; /* Sets the text size to 30 pixels */
+  color: #1d1e4c; /* Sets the text color to dark navy, matching the h1 above */
 }
-
 .top_section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 100px;
-  align-items: flex-end;
+  display: flex; /* Turns this into a Flexbox container — children automatically line up in a row by default */
+  justify-content: space-between; /* Pushes flex children to opposite ends, with space between them. Works on the main axis (horizontal by default) */
+  margin-top: 100px; /* Adds 100px of space above this element — margin-top only affects the top side */
+  align-items: flex-end; /* Aligns flex children to the BOTTOM of the container. Works on the cross axis (vertical by default) */
 }
-
 .about_section {
-  margin-top: 50px;
-  font-size: 20px;
+  margin-top: 50px; /* Adds 50px of space above this section to separate it from the section above */
+  font-size: 20px; /* Sets a base font size for this section — child elements will inherit this unless they override it */
 }
-
 .about_section h2 {
-  font-size: 70px;
-  font-weight: 400;
-  margin-bottom: 20px;
+  font-size: 70px; /* Overrides the parent's 20px font-size with a much larger 70px for the heading */
+  font-weight: 400; /* Sets a normal (thin) weight — h2 is bold by default in browsers, so this overrides that to make it light */
+  margin-bottom: 20px; /* Adds 20px of space below the heading, separating it from the paragraph beneath */
 }
-
 .about_section p {
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 1.5px;
-  text-align: justify;
+  font-size: 20px; /* Sets text size to 20px (same as the parent — explicit is clearer than relying on inheritance here) */
+  line-height: 1.5; /* Sets the space between lines of text. 1.5 = 1.5x the font-size — no unit means it's a multiplier, not a fixed px value */
+  letter-spacing: 1.5px; /* Adds 1.5px of space between each character, making text feel more open and airy */
+  text-align: justify; /* Stretches each line so both the left and right edges align evenly, like in a newspaper column */
 }
-
 .biography_section {
-  margin: 50px 0;
-  font-size: 20px;
+  margin: 50px 0; /* Shorthand: top/bottom margin = 50px, left/right = 0. Adds breathing room above and below the section */
+  font-size: 20px; /* Base font size for all text in this section */
 }
-
 .biography_section h3 {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Adds space below the heading before the list starts */
 }
-
 .biography_section ul {
-  margin-left: 20px;
+  margin-left: 20px; /* Indents the entire list 20px from the left — moves the bullet points inward so they don't sit at the very edge */
 }
-
 .biography_section li {
-  margin-bottom: 15px;
-  line-height: 1.5;
+  margin-bottom: 15px; /* Adds 15px of space below each list item so they don't feel cramped */
+  line-height: 1.5; /* Same as the paragraph — 1.5x line spacing for readability, especially if a list item wraps to a second line */
 }
-
 footer {
-  margin-top: 50px;
+  margin-top: 50px; /* Pushes the footer down 50px from whatever is above it, creating visual separation */
 }
-
 footer p {
-  text-align: end;
-  font-size: 14px;
-  color: #1d1e4c;
+  text-align: end; /* Aligns footer text to the right — matching the h4 alignment in .top_section for visual balance */
+  font-size: 14px; /* Smaller than body text — footer text is typically secondary/legal info and doesn't need to be prominent */
+  color: #1d1e4c; /* Same dark navy color used throughout — keeps the palette consistent */
 }
